@@ -1,3 +1,7 @@
-<template>
-  <div class="bg-red-500">heheh</div>
-</template>
+<template></template>
+
+<script setup>
+const { data, pending, error, refresh } = await useAsyncData("mountains", () =>
+  $fetch("https://api.nuxtjs.dev/mountains")
+);
+</script>
