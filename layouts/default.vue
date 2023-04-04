@@ -15,7 +15,7 @@
           <div
             :class="!fullBars ? 'bars__' : ''"
             class="text-gray-500 cursor-pointer"
-            @click.prevent="fullBar()"
+            @click.prevent="setFullBar()"
           >
             <i class="text-primary-dark text-xl fas fa-bars"></i>
           </div>
@@ -31,8 +31,19 @@
   </div>
 </template>
 
-<script setup>
-const fullBars = ref(false);
+<script >
+export default {
+  data() {
+    return {
+      fullBars: false,
+    };
+  },
+  methods: {
+    setFullBar() {
+      return this.fullBars ? (this.fullBars = false) : (this.fullBars = true);
+    },
+  },
+};
 </script>
 
 <style>
